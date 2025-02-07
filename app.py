@@ -23,6 +23,14 @@ def generate_new_number():
     st.session_state.random_number = random.randint(min_value, max_value)
     st.success("🎉 A new random number has been generated!")
 
+# Function to speak the random number in German
+def speak_number(number):
+    tts = gTTS(text=str(number), lang="de")
+    audio_bytes = io.BytesIO()
+    tts.write_to_fp(audio_bytes)
+    audio_bytes.seek(0)
+    return audio_bytes
+
 # Generate new number button
 if st.button("🔄 Generate New Number"):
     generate_new_number()
@@ -31,14 +39,6 @@ if st.button("🔄 Generate New Number"):
 if st.button("🔊 Speak the Number"):
     audio_bytes = speak_number(st.session_state.random_number)
     st.audio(audio_bytes, format="audio/mp3")
-
-# Function to speak the random number in German
-def speak_number(number):
-    tts = gTTS(text=str(number), lang="de")
-    audio_bytes = io.BytesIO()
-    tts.write_to_fp(audio_bytes)
-    audio_bytes.seek(0)
-    return audio_bytes
 
 # Check number button
 if st.button("👀 Reveal Number"):
