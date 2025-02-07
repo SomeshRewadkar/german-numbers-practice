@@ -30,7 +30,10 @@ def speak_number(number):
     tts.write_to_fp(audio_bytes)
     audio_bytes.seek(0)
     return audio_bytes
-
+# Generate new number button
+if st.button("🔄 Generate New Number"):
+    generate_new_number()
+    
 # Speak the number button
 if st.button("🔊 Speak the Number"):
     audio_bytes = speak_number(st.session_state.random_number)
@@ -40,9 +43,6 @@ if st.button("🔊 Speak the Number"):
 if st.button("👀 Reveal Number"):
     st.write(f"🎲 The random number is: **{st.session_state.random_number}**")
 
-# Generate new number button
-if st.button("🔄 Generate New Number"):
-    generate_new_number()
 
 # Instructions
 st.write("### 📌 Instructions:")
