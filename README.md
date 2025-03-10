@@ -1,5 +1,7 @@
 # German Numbers Practice: Listen & Guess! 🎧
 
+## Access it from here ! - https://german-numbers-practice-zauszmnuoqvczqvrnvrffs.streamlit.app/
+
 ## Overview
 This is an interactive **Streamlit** web app that helps users practice German numbers by generating random numbers within a defined range. Users can listen to the number being pronounced in German and can also reveal the number or generate a new one for continuous practice.
 
